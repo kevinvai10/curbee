@@ -1,0 +1,9 @@
+.input-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.error-label {
+    color: hsl(0deg, 50%, 50%);
+    text-transform: none;
+}
