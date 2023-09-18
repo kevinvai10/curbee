@@ -1,0 +1,70 @@
+.loginbox {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    max-width: 500px;
+    width: 500px;
+
+    padding: 48px 32px;
+
+    border-radius: 5px;
+    box-shadow: -3px 10px 20px 0px rgba(128, 125, 125, 0.75);
+    -webkit-box-shadow: -3px 10px 20px 0px rgba(128, 125, 125, 0.75);
+    -moz-box-shadow: -3px 10px 20px 0px rgba(128, 125, 125, 0.75);
+}
+
+.loginbox label {
+    font-weight: 500;
+}
+
+.loginbox form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.loginbox input {
+    padding: 4px;
+    border-radius: 5px;
+    border: 1px solid rgb(178, 178, 178)
+}
+
+.loginbox input:focus {
+    outline: none;
+}
+
+.loginbox input:focus-visible {
+    outline: blue;
+}
+
+.loginbox button {
+    padding: 8px;
+    cursor: pointer;
+    background-color: hsl(0deg, 0%, 0%);
+    color: hsl(0deg, 100%, 100%);
+    border: 1px solid hsl(0deg, 0%, 0%);
+    font-size: bold;
+    border-radius: 5px;
+
+    margin-top: 32px;
+}
+
+.loginbox button:hover {
+    background-color: inherit;
+    background-color: hsl(0deg, 100%, 100%);
+    color: hsl(0deg, 0%, 0%);
+}
+
+.loginbox h1 {
+    font-size: 1rem;
+}
+
+.loginbox h2 {
+    font-size: 32px;
+}
+
+.loginbox_text {
+    margin-bottom: 32px;
+    text-align: center;
+}
