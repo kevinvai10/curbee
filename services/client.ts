@@ -30,9 +30,7 @@ export const client = (
         config.body = body;
     }
 
-    const url = `${process.env.NEXT_PUBLIC_API_URL}/${endpoint}`;
-
-    return fetch(url, config)
+    return fetch(endpoint, config)
         .then(async (response) => {
         const data: any = response.status !== 204 ? await response.json() : {};
         if (response.ok) {
