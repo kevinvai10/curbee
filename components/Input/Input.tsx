@@ -15,11 +15,10 @@ type Props = {
 };
 
 const Input = ({ id, label, error, register, ...otherProps }: Props) => {
-    console.log({ otherProps });
     return (
         <div className={styles['input-wrapper']}>
             <label htmlFor={id}>{label}</label>
-            <input id={id} {...otherProps} {...register()} />
+            <input id={id} {...otherProps} {...(register ? register() : {})} />
             {error && <label className={styles['error-label']}>{error}</label>}
         </div>
     );
