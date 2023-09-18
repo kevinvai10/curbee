@@ -30,7 +30,7 @@ export const client = (
         config.body = body;
     }
 
-    const url = new URL(`${process.env.NEXT_PUBLIC_API_URL}/${endpoint}`);
+    const url = `${process.env.NEXT_PUBLIC_API_URL}/${endpoint}`;
 
     return fetch(url, config)
         .then(async (response) => {
