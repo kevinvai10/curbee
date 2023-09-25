@@ -16,3 +16,9 @@ export type Edge = {
 }
 
 export type NormalizedAppointment = Appointment & { cursor: string};
+
+export type AppointmentsRequest = {
+    before?: string;
+    after?: string;
+    size?: string;
+}

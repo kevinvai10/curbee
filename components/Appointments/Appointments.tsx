@@ -6,10 +6,39 @@ import AppointmentCard from '../AppointmentCard';
 import { NormalizedAppointment } from './types';
 import { normalizeAppointments } from './utils';
 import AvailableDates from './AvailableDates';
+import { useRouter } from 'next/router';
 
 const Appointments = () => {
-    const { data } = useAppointments();
+    const router = useRouter();
+    const { query } = router;
+    const previousCursorQuery = query?.before ?? '';
+    const nextCursorQuery = query?.after ?? '';
+
+    const { data, pageInfo } = useAppointments({
+        before: previousCursorQuery as string,
+        after: nextCursorQuery as string,
+    });
+
     const normalizedData = normalizeAppointments(data);
+
+    const handlePrevious = () => {
+        router.push(
+            {
+                query: { before: pageInfo.previousCursor },
+            },
+            undefined,
+            { shallow: true }
+        );
+    };
+    const handleNext = () => {
+        router.push(
+            {
+                query: { after: pageInfo.nextCursor },
+            },
+            undefined,
+            { shallow: true }
+        );
+    };
 
     return (
         <div className={styles.appointments}>
@@ -21,6 +50,14 @@ const Appointments = () => {
                     appointment={appointment}
                 />
             ))}
+            <div className={styles['appointments__pagination']}>
+                {pageInfo?.hasPreviousPage ? (
+                    <button onClick={handlePrevious}>Previous</button>
+                ) : null}
+                {pageInfo?.hasNextPage ? (
+                    <button onClick={handleNext}>Next</button>
+                ) : null}
+            </div>
         </div>
     );
 };
