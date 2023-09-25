@@ -51,14 +51,14 @@ const Appointments = () => {
                         appointment={appointment}
                     />
                 ))}
-            </div>
-            <div className={styles['appointments__pagination']}>
-                {pageInfo?.hasPreviousPage ? (
-                    <button onClick={handlePrevious}>Previous</button>
-                ) : null}
-                {pageInfo?.hasNextPage ? (
-                    <button onClick={handleNext}>Next</button>
-                ) : null}
+                <div className={styles['appointments__pagination']}>
+                    {pageInfo?.hasPreviousPage ? (
+                        <button onClick={handlePrevious}>Previous</button>
+                    ) : null}
+                    {pageInfo?.hasNextPage ? (
+                        <button onClick={handleNext}>Next</button>
+                    ) : null}
+                </div>
             </div>
         </div>
     );
