@@ -10,7 +10,7 @@ Did you run into any “gotchas” along the way? If so, what were they and how 
 
 How did you handle forms? In a largely form driven project, would you do anything differently? If so, what? I used react-hook-form and yup which is what i do in larger projects. what i'd do different is have my custom components for form, input and button for example.
 
-How did you handle authorization? In your ideal FE/BE scenario, what auth strategy would you use? Ideally, setting the token in the cookies, and implementing csrf protection. Have the BE accept the encoded token value since cookies automatically encode the string, and when sending the credentials with credentials: include, it will be sent that way.
+How did you handle authorization? In your ideal FE/BE scenario, what auth strategy would you use? Ideally, I would rely on a third party service like auth0, usually a custom solution won't be as polished as a service dedicated to this.
 
 Is there anything you’d like to share about your project prior to my evaluating it?
 One of the things I didn't have time to complete was adding react query SSR fetching, this in order to have cached data and also a smoother UX since we would get data by the time the client loads.
