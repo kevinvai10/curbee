@@ -1,12 +1,19 @@
 import { useMutation } from '@tanstack/react-query';
 import { login } from './requests';
 import { LoginFields } from './types';
+import Cookies from 'universal-cookie';
 
 export const useLogin = () => {
-    const { mutate, status, error, isLoading, isSuccess } = useMutation((loginRequest: LoginFields) => login(loginRequest), {
+    const {
+        mutate,
+        status,
+        error,
+        isLoading,
+        isSuccess
+    } = useMutation((loginRequest: LoginFields) => login(loginRequest), {
         onSuccess: (data) => {
-            console.log({data})
-            console.log("successful request")
+            const cookies = new Cookies();
+            cookies.set('Authorization', `Bearer ${data.token}`)
         }
     });
 
