@@ -45,6 +45,15 @@ pnpm dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
+Log in page:
+<img width="1270" alt="Screenshot 2023-09-26 at 0 14 27" src="https://github.com/kevinvai10/curbee/assets/43870516/379784bb-2474-4315-b396-6636e08c5773">
+
+
+Dashboard: 
+
+<img width="760" alt="Screenshot 2023-09-25 at 23 08 02" src="https://github.com/kevinvai10/curbee/assets/43870516/66918047-381b-453f-9061-089853644d87">
+
+
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:
