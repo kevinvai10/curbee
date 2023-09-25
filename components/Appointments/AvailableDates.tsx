@@ -41,8 +41,10 @@ const AvailableDates = () => {
             </div>
             <div>
                 {availableDates.length > 0
-                    ? availableDates.map((date) => (
-                          <div>{new Date(date).toLocaleString('en-us')}</div>
+                    ? availableDates.map((date, index) => (
+                          <div key={`${date}-${index}`}>
+                              {new Date(date).toLocaleString('en-us')}
+                          </div>
                       ))
                     : null}
             </div>

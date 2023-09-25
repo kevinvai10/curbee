@@ -44,7 +44,7 @@ const LoginBox = () => {
         if (isSuccess) {
             router.push('/dashboard');
         }
-    }, [isSuccess]);
+    }, [isSuccess, router]);
 
     return (
         <div className={styles.loginbox}>
