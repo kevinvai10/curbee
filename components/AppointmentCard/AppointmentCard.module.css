@@ -1,11 +1,18 @@
 .card {
     border: 1px solid hsl(0, 0%, 80%);
     border-radius: 5px;
-    width: 600px;
+    min-width: 400px;
+    width: -webkit-fill-available;
+    max-width: 600px;
 }
 
 .card__title {
     padding: 16px;
+}
+
+.card__title p {
+    font-weight: bold;
+    font-size: 18px
 }
 
 .card__content {
