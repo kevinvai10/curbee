@@ -1,0 +1,24 @@
+.card {
+    border: 1px solid hsl(0, 0%, 80%);
+    border-radius: 5px;
+    width: 600px;
+}
+
+.card__title {
+    padding: 16px;
+}
+
+.card__content {
+    padding: 32px 24px;
+    border-top: 1px solid hsl(0, 0%, 80%);
+}
+
+.card__content__date {
+    margin-bottom: 24px;
+}
+
+.card__content__summary > p {
+    font-weight: bold;
+    color: hsl(0, 0%, 70%);
+    font-size: 14px;
+}
