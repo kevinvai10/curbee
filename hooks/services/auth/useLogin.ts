@@ -13,7 +13,7 @@ export const useLogin = () => {
     } = useMutation((loginRequest: LoginFields) => login(loginRequest), {
         onSuccess: (data) => {
             const cookies = new Cookies();
-            cookies.set('Authorization', `Bearer ${data.token}`)
+            cookies.set('Authorization', data.token);
         }
     });
 
