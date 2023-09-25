@@ -5,6 +5,7 @@ import Spinner from '../Spinner';
 import { useForm } from 'react-hook-form';
 import { loginResolver } from './utils';
 import Input from '../Input/Input';
+import { useRouter } from 'next/router';
 
 const SPINNER_WRAPPER_STYLES = {
     width: '100%',
@@ -16,6 +17,8 @@ const SPINNER_WRAPPER_STYLES = {
 const ERROR_MESSAGE = 'Something went wrong, please try again.';
 
 const LoginBox = () => {
+    const router = useRouter();
+
     const {
         handleLogin,
         isLoading,
@@ -36,6 +39,12 @@ const LoginBox = () => {
     const onSubmit = handleSubmit((loginRequest) => {
         handleLogin(loginRequest);
     });
+
+    React.useEffect(() => {
+        if (isSuccess) {
+            router.push('/dashboard');
+        }
+    }, [isSuccess]);
 
     return (
         <div className={styles.loginbox}>
