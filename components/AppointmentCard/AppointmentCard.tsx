@@ -47,9 +47,7 @@ const AppointmentCard = ({ appointment }: Props) => {
                 </div>
                 <div className={styles['card__content__summary']}>
                     <p>Service</p>
-                    <ul>
-                        <li>{appointment.workOrder.service}</li>
-                    </ul>
+                    <p>{appointment.workOrder.service}</p>
                 </div>
             </div>
         </div>

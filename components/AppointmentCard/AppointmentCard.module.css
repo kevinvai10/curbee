@@ -24,8 +24,12 @@
     margin-bottom: 24px;
 }
 
-.card__content__summary > p {
+.card__content__summary p:first-of-type {
     font-weight: bold;
     color: hsl(0, 0%, 70%);
     font-size: 14px;
+}
+
+.card__content__summary p {
+    color: inherit;
 }
