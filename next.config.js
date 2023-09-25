@@ -3,12 +3,18 @@ module.exports = {
         return [
             {
                 source: '/auth/login',
-                destination: 'https://modulith.herokuapp.com/auth/login',
+                destination:
+                    'https://backend.billowing-truth-38ad.workers.dev/api/auth',
             },
             {
-                source: '/api/v1/appointments',
+                source: '/api/appointments',
                 destination:
-                    'https://modulith.herokuapp.com/api/v1/appointments',
+                    'https://backend.billowing-truth-38ad.workers.dev/api/appointments',
+            },
+            {
+                source: '/api/availability/:date',
+                destination:
+                    'https://backend.billowing-truth-38ad.workers.dev/api/availability/:date',
             },
         ];
     },
