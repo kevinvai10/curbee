@@ -14,7 +14,7 @@ const Appointments = () => {
     const previousCursorQuery = query?.before ?? '';
     const nextCursorQuery = query?.after ?? '';
 
-    const { data, pageInfo } = useAppointments({
+    const { data, pageInfo, isLoading } = useAppointments({
         before: previousCursorQuery as string,
         after: nextCursorQuery as string,
     });
@@ -44,22 +44,28 @@ const Appointments = () => {
         <div className={styles.appointments}>
             <h1>Appointments</h1>
             <AvailableDates />
-            <div className={styles['appointments__card__wrapper']}>
-                {normalizedData?.map((appointment: NormalizedAppointment) => (
-                    <AppointmentCard
-                        key={appointment.id}
-                        appointment={appointment}
-                    />
-                ))}
-                <div className={styles['appointments__pagination']}>
-                    {pageInfo?.hasPreviousPage ? (
-                        <button onClick={handlePrevious}>Previous</button>
-                    ) : null}
-                    {pageInfo?.hasNextPage ? (
-                        <button onClick={handleNext}>Next</button>
-                    ) : null}
+            {isLoading ? (
+                <p>Loading...</p>
+            ) : (
+                <div className={styles['appointments__card__wrapper']}>
+                    {normalizedData?.map(
+                        (appointment: NormalizedAppointment) => (
+                            <AppointmentCard
+                                key={appointment.id}
+                                appointment={appointment}
+                            />
+                        )
+                    )}
+                    <div className={styles['appointments__pagination']}>
+                        {pageInfo?.hasPreviousPage ? (
+                            <button onClick={handlePrevious}>Previous</button>
+                        ) : null}
+                        {pageInfo?.hasNextPage ? (
+                            <button onClick={handleNext}>Next</button>
+                        ) : null}
+                    </div>
                 </div>
-            </div>
+            )}
         </div>
     );
 };
