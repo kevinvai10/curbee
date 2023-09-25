@@ -12,7 +12,8 @@ function useAppointments () {
     );
 
     return {
-        data: data?.data,
+        data: data?.edges,
+        pageInfo: data?.pageInfo,
         error,
         isLoading
     }
