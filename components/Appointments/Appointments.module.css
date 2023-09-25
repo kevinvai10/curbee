@@ -18,5 +18,23 @@
 .appointments__dates {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     gap: 16px;
+}
+
+.appointments__dates__input {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.appointments__dates__input label {
+    display: inline-block;
+    background-color: hsl(0, 0%, 100%);
+    font-size: 12px;
+    padding: 4px;
+
+    position: absolute;
+    left: 10px;
+    top: -13px;
 }

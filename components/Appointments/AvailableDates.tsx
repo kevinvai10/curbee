@@ -26,18 +26,19 @@ const AvailableDates = () => {
 
     return (
         <div className={styles['appointments__dates']}>
-            <label htmlFor="dates">Search for appointments by date</label>
-            <select
-                id="dates"
-                value={selectedDate}
-                onChange={(e) => setSelectedDate(e.target.value)}
-            >
-                <option disabled selected value={''}>
-                    select an option
-                </option>
-
-                <option value="tomorrow">Tomorrow</option>
-            </select>
+            <div className={styles['appointments__dates__input']}>
+                <label htmlFor="dates">Appointment Dates</label>
+                <select
+                    id="dates"
+                    value={selectedDate}
+                    onChange={(e) => setSelectedDate(e.target.value)}
+                >
+                    <option disabled selected value={''}>
+                        select an option
+                    </option>
+                    <option value="tomorrow">Tomorrow</option>
+                </select>
+            </div>
             <div>
                 {availableDates.length > 0
                     ? availableDates.map((date) => (
