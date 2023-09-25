@@ -8,7 +8,6 @@ function useAuth () {
     // a token if the user has been authenticated
     const cookies = new Cookies();
     const isAuth = Boolean(cookies.get('Authorization'));
-    console.log('isAuth hook', isAuth)
     return isAuth;
 }
 
