@@ -1,5 +1,35 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+
+## Project Reflection
+
+Did you run into any “gotchas” along the way? If so, what were they and how did you address them?
+  - Not having an auth endpoint to rely on meant I would have to rely on the cookie saved for authentication.
+  - The BE would not take the value from authorization in the cookies (its encoded) when using credentials: include, meaning that i had to manually set the authorization header, this meant a challenge
+    especially for server side requests.
+
+How did you handle forms? In a largely form driven project, would you do anything differently? If so, what? I used react-hook-form and yup which is what i do in larger projects. what i'd do different is have my custom components for form, input and button for example.
+
+How did you handle authorization? In your ideal FE/BE scenario, what auth strategy would you use?
+
+Is there anything you’d like to share about your project prior to my evaluating it?
+One of the things I didn't have time to complete was adding react query SSR fetching, this in order to have cached data and also a smoother UX since we would get data by the time the client loads.
+I used css modules just because you have a template out of the box but usually i would rely on styled components, emotion, or even better something like Chakra UI or Radix UI
+I left todos with how i would actually address certain decisions.
+Tests are simplified and not mocking requests for now but that would be the next step.
+
+How long did you spend on this exercise? If you had unlimited more time to spend on this, how would you spend it and how would you prioritize each item?
+I spent about 6 hours. If I had more time I would prioritize this way:
+
+- Set up a library like Chkara UI or Radix UI and create the color palette for this project.
+- Work on log in/auth, since once we get that right, we can address SSR authenticated requests and redirects.
+- Work on dashboard, use a date library like moment to handle scheduled times and durations.
+- Work on a better UI/UX for selecting availability, probably using a calendar library for it (right now it's hardcoded with only avaialble to check the day after the current day
+- Add meaningful tests and mock API.
+- move types to live under /src and have modules by API or page for better organization.
+- Get React Query Cache working.
+- Improve loading states and error messages for both the developer and the user.
+
 ## Getting Started
 
 First, run the development server:
