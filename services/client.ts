@@ -1,3 +1,4 @@
+import Cookies from 'universal-cookie';
 import { HEADERS, GET } from './constants';
 
 interface ClientRequestInit extends RequestInit {
@@ -16,14 +17,19 @@ export const client = (
         ...customConfig
     }: ClientRequestInit = {}
 ) => {
+    const cookies = new Cookies();
+    const authorizationToken = cookies.get('Authorization');
+
     const config: RequestInit = {
-        credentials: 'include',
         method: GET,
         ...customConfig,
         headers: {
-        ...HEADERS,
-        ...customConfig.headers,
+            ...HEADERS,
+            ...customConfig.headers,
+            // we need to do this since the BE won't grab the encoded value
+            'Authorization': `Bearer ${authorizationToken}`
         },
+        // credentials: 'include', TODO: replace when updating BE
     };
 
     if (body) {
@@ -46,11 +52,6 @@ export const client = (
         }
         })
         .catch((error: Error) => {
-            /**
-             * we still don't know how the api will
-             * handle errors so will return error
-             * for now
-             */
             return Promise.reject<Error>(error);
         });
 };
