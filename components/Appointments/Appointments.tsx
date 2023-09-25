@@ -44,12 +44,14 @@ const Appointments = () => {
         <div className={styles.appointments}>
             <h1>Appointments</h1>
             <AvailableDates />
-            {normalizedData?.map((appointment: NormalizedAppointment) => (
-                <AppointmentCard
-                    key={appointment.id}
-                    appointment={appointment}
-                />
-            ))}
+            <div className={styles['appointments__card__wrapper']}>
+                {normalizedData?.map((appointment: NormalizedAppointment) => (
+                    <AppointmentCard
+                        key={appointment.id}
+                        appointment={appointment}
+                    />
+                ))}
+            </div>
             <div className={styles['appointments__pagination']}>
                 {pageInfo?.hasPreviousPage ? (
                     <button onClick={handlePrevious}>Previous</button>

@@ -17,7 +17,7 @@
 
 .appointments button {
     padding: 8px;
-    width: 250px;
+    min-width: 188px;
     border-radius: 5px;
     background-color: inherit;
     border: 1px solid hsl(0, 0%, 80%);
@@ -53,7 +53,16 @@
     top: -13px;
 }
 
+.appointments__card__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    max-width: 600px;
+    min-width: 400px;
+    width: 100%
+}
 .appointments__pagination {
     display: flex;
     gap: 16px;
+    margin-top: 16px;
 }
